@@ -19,6 +19,8 @@ namespace HTMLReplacer
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            List<string> HTMLOptions = new List<string>() { "Tag", "Attribute" };
+            cbxHTMLOptions.DataSource = HTMLOptions;
 
         }
 
@@ -48,6 +50,38 @@ namespace HTMLReplacer
                 }
                 fileStream.Close();
             }
+        }
+
+        /// <summary>
+        /// Copy the Outputted code back to the Import. (To process again?)
+        /// </summary>
+        private void btnCopyOutToIn_Click(object sender, EventArgs e)
+        {
+            txtInputAsCode.Text = txtOutputAsCode.Text;
+        }
+
+        /// <summary>
+        /// Work out what needs to be done and do it.
+        /// </summary>
+        private void btnProcess_Click(object sender, EventArgs e)
+        {
+            var SelectedOptions = this.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
+
+            switch(SelectedOptions.Name){
+                case "rbGiveLabelForInputId":
+
+
+                    break;
+
+                default:
+                    break;
+            }
+
+        }
+
+        private void SetLabelForAttribute()
+        {
+
         }
     }
 }
