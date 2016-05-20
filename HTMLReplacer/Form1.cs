@@ -98,7 +98,8 @@ namespace HTMLReplacer
                 if (!label.Attributes.Contains("For"))
                 {
                     HtmlNode input = label.ChildNodes.Where(n => n.Name.Equals("input")).FirstOrDefault();
-                    label.Attributes.Add("For", input.Id);
+                    if(input != null)
+                        label.Attributes.Add("For", input.Id);
                 }
             }
             Output = doc.DocumentNode.OuterHtml;
