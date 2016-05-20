@@ -104,5 +104,6 @@ namespace HTMLReplacer
             }
             Output = doc.DocumentNode.OuterHtml;
         }
+
     }
 }

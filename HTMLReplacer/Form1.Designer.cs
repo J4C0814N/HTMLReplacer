@@ -37,7 +37,9 @@
             this.btnCopyOutToIn = new System.Windows.Forms.Button();
             this.cbxHTMLOptions = new System.Windows.Forms.ComboBox();
             this.gbxOptions = new System.Windows.Forms.GroupBox();
+            this.lblOutput = new System.Windows.Forms.Label();
             this.rbGiveLabelForInputId = new System.Windows.Forms.RadioButton();
+            this.lblInput = new System.Windows.Forms.Label();
             this.gbxOptions.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -94,6 +96,7 @@
             this.cbxReplaceSelection.Name = "cbxReplaceSelection";
             this.cbxReplaceSelection.Size = new System.Drawing.Size(356, 21);
             this.cbxReplaceSelection.TabIndex = 4;
+            this.cbxReplaceSelection.Visible = false;
             // 
             // btnCopyOutToIn
             // 
@@ -113,9 +116,11 @@
             this.cbxHTMLOptions.Name = "cbxHTMLOptions";
             this.cbxHTMLOptions.Size = new System.Drawing.Size(151, 21);
             this.cbxHTMLOptions.TabIndex = 4;
+            this.cbxHTMLOptions.Visible = false;
             // 
             // gbxOptions
             // 
+            this.gbxOptions.Controls.Add(this.lblOutput);
             this.gbxOptions.Controls.Add(this.rbGiveLabelForInputId);
             this.gbxOptions.Location = new System.Drawing.Point(412, 28);
             this.gbxOptions.Name = "gbxOptions";
@@ -123,23 +128,42 @@
             this.gbxOptions.TabIndex = 6;
             this.gbxOptions.TabStop = false;
             // 
+            // lblOutput
+            // 
+            this.lblOutput.AutoSize = true;
+            this.lblOutput.Location = new System.Drawing.Point(-3, 63);
+            this.lblOutput.Name = "lblOutput";
+            this.lblOutput.Size = new System.Drawing.Size(42, 13);
+            this.lblOutput.TabIndex = 7;
+            this.lblOutput.Text = "Output:";
+            // 
             // rbGiveLabelForInputId
             // 
             this.rbGiveLabelForInputId.AutoSize = true;
             this.rbGiveLabelForInputId.Checked = true;
             this.rbGiveLabelForInputId.Location = new System.Drawing.Point(7, 7);
             this.rbGiveLabelForInputId.Name = "rbGiveLabelForInputId";
-            this.rbGiveLabelForInputId.Size = new System.Drawing.Size(172, 17);
+            this.rbGiveLabelForInputId.Size = new System.Drawing.Size(227, 17);
             this.rbGiveLabelForInputId.TabIndex = 0;
             this.rbGiveLabelForInputId.TabStop = true;
-            this.rbGiveLabelForInputId.Text = "WCAG2.0AA 1.3.1 Compliance";
+            this.rbGiveLabelForInputId.Text = "WCAG2.0AA 1.3.1 Check 206 Compliance";
             this.rbGiveLabelForInputId.UseVisualStyleBackColor = true;
+            // 
+            // lblInput
+            // 
+            this.lblInput.AutoSize = true;
+            this.lblInput.Location = new System.Drawing.Point(13, 91);
+            this.lblInput.Name = "lblInput";
+            this.lblInput.Size = new System.Drawing.Size(34, 13);
+            this.lblInput.TabIndex = 7;
+            this.lblInput.Text = "Input:";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(785, 664);
+            this.Controls.Add(this.lblInput);
             this.Controls.Add(this.gbxOptions);
             this.Controls.Add(this.btnCopyOutToIn);
             this.Controls.Add(this.cbxHTMLOptions);
@@ -170,6 +194,8 @@
         private System.Windows.Forms.ComboBox cbxHTMLOptions;
         private System.Windows.Forms.GroupBox gbxOptions;
         private System.Windows.Forms.RadioButton rbGiveLabelForInputId;
+        private System.Windows.Forms.Label lblInput;
+        private System.Windows.Forms.Label lblOutput;
     }
 }
 
