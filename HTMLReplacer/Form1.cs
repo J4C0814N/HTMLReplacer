@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HtmlAgilityPack;
 
 namespace HTMLReplacer
 {
@@ -65,11 +66,14 @@ namespace HTMLReplacer
         /// </summary>
         private void btnProcess_Click(object sender, EventArgs e)
         {
-            var SelectedOptions = this.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
+
+            var SelectedOptions = gbxOptions.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
 
             switch(SelectedOptions.Name){
                 case "rbGiveLabelForInputId":
-
+                    string OutPut = string.Empty;
+                    SetLabelForAttribute(txtInputAsCode.Text, out OutPut);
+                    txtOutputAsCode.Text = OutPut;
 
                     break;
 
@@ -79,9 +83,25 @@ namespace HTMLReplacer
 
         }
 
-        private void SetLabelForAttribute()
+        /// <summary>
+        /// Parses the html and adds for= attribute to all label tags without.
+        /// for= value is determined by the labels first child input tag
+        /// </summary>
+        /// <param name="Input">HTML as a string</param>
+        /// <param name="Output">HTML as a string</param>
+        private void SetLabelForAttribute(string Input, out string Output)
         {
-
+            HtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();
+            doc.LoadHtml(Input);
+            foreach (HtmlNode label in doc.DocumentNode.SelectNodes("//label"))
+            {
+                if (!label.Attributes.Contains("For"))
+                {
+                    HtmlNode input = label.ChildNodes.Where(n => n.Name.Equals("input")).FirstOrDefault();
+                    label.Attributes.Add("For", input.Id);
+                }
+            }
+            Output = doc.DocumentNode.OuterHtml;
         }
     }
 }

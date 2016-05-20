@@ -126,6 +126,7 @@
             // rbGiveLabelForInputId
             // 
             this.rbGiveLabelForInputId.AutoSize = true;
+            this.rbGiveLabelForInputId.Checked = true;
             this.rbGiveLabelForInputId.Location = new System.Drawing.Point(7, 7);
             this.rbGiveLabelForInputId.Name = "rbGiveLabelForInputId";
             this.rbGiveLabelForInputId.Size = new System.Drawing.Size(144, 17);
