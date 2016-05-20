@@ -129,10 +129,10 @@
             this.rbGiveLabelForInputId.Checked = true;
             this.rbGiveLabelForInputId.Location = new System.Drawing.Point(7, 7);
             this.rbGiveLabelForInputId.Name = "rbGiveLabelForInputId";
-            this.rbGiveLabelForInputId.Size = new System.Drawing.Size(144, 17);
+            this.rbGiveLabelForInputId.Size = new System.Drawing.Size(172, 17);
             this.rbGiveLabelForInputId.TabIndex = 0;
             this.rbGiveLabelForInputId.TabStop = true;
-            this.rbGiveLabelForInputId.Text = "Give <label for=[InputId]>";
+            this.rbGiveLabelForInputId.Text = "WCAG2.0AA 1.3.1 Compliance";
             this.rbGiveLabelForInputId.UseVisualStyleBackColor = true;
             // 
             // Form1
