@@ -68,6 +68,7 @@
             this.btnImport.TabIndex = 2;
             this.btnImport.Text = "Import File";
             this.btnImport.UseVisualStyleBackColor = true;
+            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
             // 
             // btnSaveOutput
             // 
